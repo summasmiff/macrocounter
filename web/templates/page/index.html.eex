@@ -1,71 +1,79 @@
-<h1 class="title">MacroCounter</h1>
-<br>
-<table>
-  <tr>
-    <th>Protein</th>
-    <th>Fat</th>
-    <th>Carbs</th>
-    <th>Fiber</th>
-  </tr>
-  <tr>
-    <th>110</th>
-    <th>53</th>
-    <th>107</th>
-    <th>25</th>
-  </tr>
-</table>
-<form id="entry">
-  <label for="food">Add food</label>
-  <input id="food" type="text" form="entry"></input>
-  <input type="submit" value="Save">
-</form>
-<h4>Add recent</h4>
-<ul>
-  <li>Coffee</li>
-  <li>Greek yogurt 0%</li>
-  <li>Cottage Cheese</li>
-</ul>
-<table>
-  <tr>
-    <th>&nbsp;</th>
-    <th>Protein</th>
-    <th>Fat</th>
-    <th>Carbs</th>
-    <th>Fiber</th>
-  </tr>
-  <tr>
-    <td>Yogurt</td>
-    <td>22</td>
-    <td>0</td>
-    <td>9</td>
-    <td>0</td>
-  </tr>
-  <tr>
-    <td>Fruit</td>
-    <td>1</td>
-    <td>0</td>
-    <td>27</td>
-    <td>3</td>
-  </tr>
-  <tr>
-    <td>Omelette</td>
-    <td>12</td>
-    <td>10</td>
-    <td>0</td>
-    <td>0</td>
-  </tr>
-  <tr>
-    <td>Cheese</td>
-    <td>9</td>
-    <td>10</td>
-    <td>0</td>
-    <td>0</td>
-  </tr>
-  <tr>
-    <td>Protein scoop</td>
-    <td>24</td>
-    <td>1</td>
-    <td>3</td>
-    <td>0</td>
-  </tr>
-</table>
+<div id="react-root">
+  <h1 class="title">MacroCounter</h1>
+  <h4>Macros Remaining Today</h4>
+  <table>
+    <tr>
+      <th>Protein</th>
+      <th>Fat</th>
+      <th>Carbs</th>
+      <th>Fiber</th>
+    </tr>
+    <tr>
+      <th>110</th>
+      <th>53</th>
+      <th>107</th>
+      <th>25</th>
+    </tr>
+  </table>
+  <form id="entry">
+    <label for="food">Add food</label>
+    <input id="food" type="text" form="entry"></input>
+    <label for="protein">Protein</label>
+    <input id="protein" type="text" form="entry"></input>
+    <label for="fat">Fat</label>
+    <input id="fat" type="text" form="entry"></input>
+    <label for="carbs">Carbs</label>
+    <input id="carbs" type="text" form="entry"></input>
+    <input type="submit" value="Save">
+  </form>
+  <h4>Add recent</h4>
+  <ul>
+    <li><button>Coffee</button></li>
+    <li><button>Greek yogurt 0%</button></li>
+    <li><button>Cottage Cheese</button></li>
+  </ul>
+  <table>
+    <tr>
+      <th>&nbsp;</th>
+      <th>Protein</th>
+      <th>Fat</th>
+      <th>Carbs</th>
+      <th>Fiber</th>
+    </tr>
+    <tr>
+      <td>Yogurt</td>
+      <td>22</td>
+      <td>0</td>
+      <td>9</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Fruit</td>
+      <td>1</td>
+      <td>0</td>
+      <td>27</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>Omelette</td>
+      <td>12</td>
+      <td>10</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Cheese</td>
+      <td>9</td>
+      <td>10</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Protein scoop</td>
+      <td>24</td>
+      <td>1</td>
+      <td>3</td>
+      <td>0</td>
+    </tr>
+  </table>
+</div>

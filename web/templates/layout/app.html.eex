@@ -9,7 +9,7 @@
 
     <title>Hello Macrocounter!</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css">
-
+    <link rel="stylesheet" href="">
   </head>
 
   <body>
@@ -23,5 +23,9 @@
 
     </div> <!-- /container -->
     <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
+    <script>
+      var el = document.getElementById('react-root');
+      require("web/static/js/app").render(el);
+    </script>
   </body>
 </html>
