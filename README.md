@@ -2,6 +2,14 @@
 
 IIFYM
 
+Basic calculator for keeping track of one's daily macronutrients.
+
+To use:
+
+  * Set a total macronutrient goal (how many of each macro you want to eat daily)
+  * Enter foods you eat
+  * MacroCounter will subtract those macros from your goal
+
 To start your Phoenix app:
 
   * Install dependencies with `mix deps.get`
