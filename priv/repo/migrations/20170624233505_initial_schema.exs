@@ -4,6 +4,8 @@ defmodule Macrocounter.Repo.Migrations.InitialSchema do
   def change do
     create table(:users) do
       add :name, :string
+
+      timestamps()
     end
 
     create table(:foods) do
@@ -13,6 +15,8 @@ defmodule Macrocounter.Repo.Migrations.InitialSchema do
       add :grams_protein, :integer
       add :grams_fat, :integer
       add :grams_carbs, :integer
+
+      timestamps()
     end
 
     create table(:entries) do

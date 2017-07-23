@@ -10,8 +10,9 @@ defmodule Macrocounter.User do
   @doc """
   Builds a changeset based on the `struct` and `params`.
   """
-  def changeset(struct, params \\ %{}) do
-    struct
+  def changeset(params), do: changeset(%__MODULE__{}, params)
+  def changeset(model, params) do
+    model
     |> cast(params, [:name])
     |> validate_required([:name])
   end
