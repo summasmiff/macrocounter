@@ -1,15 +1,18 @@
 defmodule Macrocounter.EntryController do
   use Macrocounter.Web, :controller
+  import Logger
 
-  alias Macrocounter.Entry
+  alias Macrocounter.{Entry, User}
 
   def index(conn, _params) do
     entries = Repo.all(Entry)
     render(conn, "index.json", entries: entries)
   end
 
-  def create(conn, %{"entry" => entry_params}) do
-    changeset = Entry.changeset(%Entry{}, entry_params)
+  def create(conn, %{"entry" => params}) do
+    user = Repo.get_by!(User, name: "Summer")
+    changeset_params = Map.merge(params, %{"user_id" => user.id})
+    changeset = Entry.changeset(%Entry{}, changeset_params)
 
     case Repo.insert(changeset) do
       {:ok, entry} ->

@@ -17,14 +17,14 @@ defmodule Macrocounter.Router do
     pipe_through :browser # Use the default browser stack
 
     get "/", PageController, :index
+  end
+
+  scope "/api", Macrocounter do
+    pipe_through :api
+
     resources "/entries", EntryController, except: [:new, :edit]
     resources "/foods", FoodController, except: [:new, :edit]
     resources "/goals", GoalController, except: [:new, :edit]
     resources "/users", UserController, except: [:new, :edit]
   end
-
-  # Other scopes may use custom stacks.
-  # scope "/api", Macrocounter do
-  #   pipe_through :api
-  # end
 end

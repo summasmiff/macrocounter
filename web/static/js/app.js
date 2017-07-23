@@ -1,6 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { Router, IndexRoute, Route, Link, browserHistory, Redirect } from 'react-router';
+import EntryForm from './entryForm'
 
 export class App extends React.Component {
   render() {
@@ -24,17 +25,9 @@ export class App extends React.Component {
             </tr>
           </tbody>
         </table>
-        <form id="entry">
-          <label htmlFor="food">Add food</label>
-          <input id="food" type="text" form="entry"></input>
-          <label htmlFor="protein">Protein</label>
-          <input id="protein" type="text" form="entry"></input>
-          <label htmlFor="fat">Fat</label>
-          <input id="fat" type="text" form="entry"></input>
-          <label htmlFor="carbs">Carbs</label>
-          <input id="carbs" type="text" form="entry"></input>
-          <input type="submit" value="Save"></input>
-        </form>
+
+        <EntryForm />
+
         <h4>Add recent</h4>
         <ul>
           <li><button>Coffee</button></li>
