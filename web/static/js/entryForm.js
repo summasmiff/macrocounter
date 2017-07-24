@@ -31,42 +31,57 @@ export default class EntryForm extends React.Component {
   render() {
     return(
       <form id="entry" onSubmit={e => this.submit(e)}>
-        <label htmlFor="food">Add food</label>
-        <input id="food"
-               type="text"
-               form="entry"
-               value={this.state.name}
-               onChange={e => this.setState({name: e.target.value})}>
-        </input>
-        <label htmlFor="protein">Protein</label>
-        <input id="protein"
-               type="text"
-               form="entry"
-               value={this.state.grams_protein}
-               onChange={e => this.setState({grams_protein: e.target.value})}>
-        </input>
-        <label htmlFor="fat">Fat</label>
-        <input id="fat"
-               type="text"
-               form="entry"
-               value={this.state.grams_fat}
-               onChange={e => this.setState({grams_fat: e.target.value})}>
-        </input>
-        <label htmlFor="carbs">Carbs</label>
-        <input id="carbs"
-               type="text"
-               form="entry"
-               value={this.state.grams_carbs}
-               onChange={e=>this.setState({grams_carbs: e.target.value})}>
-        </input>
-        <label htmlFor="fiber">Fiber</label>
-        <input id="fiber"
-               type="text"
-               form="entry"
-               value={this.state.grams_fiber}
-               onChange={e=>this.setState({grams_fiber: e.target.value})}>
-        </input>
-        <input type="submit" value="Save"></input>
+        <div className="row">
+          <div className="two columns">
+            <label htmlFor="food">Add food</label>
+            <input id="food"
+                   type="text"
+                   form="entry"
+                   value={this.state.name}
+                   onChange={e => this.setState({name: e.target.value})}>
+            </input>
+          </div>
+          <div className="two columns">
+            <label htmlFor="protein">Protein</label>
+            <input id="protein"
+                   type="text"
+                   form="entry"
+                   value={this.state.grams_protein}
+                   onChange={e => this.setState({grams_protein: e.target.value})}>
+            </input>
+          </div>
+          <div className="two columns">
+            <label htmlFor="fat">Fat</label>
+            <input id="fat"
+                   type="text"
+                   form="entry"
+                   value={this.state.grams_fat}
+                   onChange={e => this.setState({grams_fat: e.target.value})}>
+            </input>
+          </div>
+          <div className="two columns">
+            <label htmlFor="carbs">Carbs</label>
+            <input id="carbs"
+                   type="text"
+                   form="entry"
+                   value={this.state.grams_carbs}
+                   onChange={e=>this.setState({grams_carbs: e.target.value})}>
+            </input>
+          </div>
+          <div className="two columns">
+            <label htmlFor="fiber">Fiber</label>
+            <input id="fiber"
+                   type="text"
+                   form="entry"
+                   value={this.state.grams_fiber}
+                   onChange={e=>this.setState({grams_fiber: e.target.value})}>
+            </input>
+          </div>
+          <div className="two columns">
+            <label htmlFor="submit">&nbsp;</label>
+            <input id="submit" type="submit" value="Save"></input>
+          </div>
+        </div>
       </form>
     );
   }
