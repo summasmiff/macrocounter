@@ -9,7 +9,8 @@ export default class EntryForm extends React.Component {
       name: '',
       grams_protein: 0,
       grams_fat: 0,
-      grams_carbs: 0
+      grams_carbs: 0,
+      grams_fiber: 0
     };
   }
 
@@ -20,7 +21,8 @@ export default class EntryForm extends React.Component {
         'name': this.state.name,
         'grams_protein': this.state.grams_protein,
         'grams_fat': this.state.grams_fat,
-        'grams_carbs': this.state.grams_carbs
+        'grams_carbs': this.state.grams_carbs,
+        'grams_fiber': this.state.grams_fiber
       }
     }
     Ajax.post('/api/entries', params);
@@ -56,6 +58,13 @@ export default class EntryForm extends React.Component {
                form="entry"
                value={this.state.grams_carbs}
                onChange={e=>this.setState({grams_carbs: e.target.value})}>
+        </input>
+        <label htmlFor="fiber">Fiber</label>
+        <input id="fiber"
+               type="text"
+               form="entry"
+               value={this.state.grams_fiber}
+               onChange={e=>this.setState({grams_fiber: e.target.value})}>
         </input>
         <input type="submit" value="Save"></input>
       </form>

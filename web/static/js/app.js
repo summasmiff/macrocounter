@@ -1,7 +1,10 @@
+import 'babel-polyfill';
+import 'core-js';
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { Router, IndexRoute, Route, Link, browserHistory, Redirect } from 'react-router';
 import EntryForm from './entryForm'
+import EntriesTable from './entriesTable'
 
 export class App extends React.Component {
   render() {
@@ -34,52 +37,7 @@ export class App extends React.Component {
           <li><button>Greek yogurt 0%</button></li>
           <li><button>Cottage Cheese</button></li>
         </ul>
-        <table>
-          <tbody>
-            <tr>
-              <th>&nbsp;</th>
-              <th>Protein</th>
-              <th>Fat</th>
-              <th>Carbs</th>
-              <th>Fiber</th>
-            </tr>
-            <tr>
-              <td>Yogurt</td>
-              <td>22</td>
-              <td>0</td>
-              <td>9</td>
-              <td>0</td>
-            </tr>
-            <tr>
-              <td>Fruit</td>
-              <td>1</td>
-              <td>0</td>
-              <td>27</td>
-              <td>3</td>
-            </tr>
-            <tr>
-              <td>Omelette</td>
-              <td>12</td>
-              <td>10</td>
-              <td>0</td>
-              <td>0</td>
-            </tr>
-            <tr>
-              <td>Cheese</td>
-              <td>9</td>
-              <td>10</td>
-              <td>0</td>
-              <td>0</td>
-            </tr>
-            <tr>
-              <td>Protein scoop</td>
-              <td>24</td>
-              <td>1</td>
-              <td>3</td>
-              <td>0</td>
-            </tr>
-          </tbody>
-        </table>
+        <EntriesTable />
       </div>
     );
   }

@@ -10,7 +10,13 @@ defmodule Macrocounter.EntryView do
   end
 
   def render("entry.json", %{entry: entry}) do
-    %{id: entry.id,
-      name: entry.name}
+    %{
+      id: entry.id,
+      name: entry.name,
+      grams_protein: entry.grams_protein,
+      grams_carbs: entry.grams_carbs,
+      grams_fat: entry.grams_fat,
+      grams_fiber: entry.grams_fiber
+     }
   end
 end

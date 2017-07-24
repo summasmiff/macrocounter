@@ -10,6 +10,7 @@ defmodule Macrocounter.Entry do
     field :grams_protein, :integer
     field :grams_fat, :integer
     field :grams_carbs, :integer
+    field :grams_fiber, :integer
 
     timestamps()
   end
@@ -17,7 +18,8 @@ defmodule Macrocounter.Entry do
   def changeset(params), do: changeset(%__MODULE__{}, params)
   def changeset(struct, params \\ %{}) do
     struct
-    |> cast(params, [:name, :quantity, :unit, :grams_protein, :grams_fat, :grams_carbs, :user_id])
+    |> cast(params, [:name, :quantity, :unit, :grams_protein, :grams_fat,
+                     :grams_carbs, :grams_fiber, :user_id])
     |> validate_required([:grams_protein, :grams_carbs, :grams_fat, :user_id])
   end
 end

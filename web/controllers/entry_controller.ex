@@ -1,6 +1,5 @@
 defmodule Macrocounter.EntryController do
   use Macrocounter.Web, :controller
-  import Logger
 
   alias Macrocounter.{Entry, User}
 

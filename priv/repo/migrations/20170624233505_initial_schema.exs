@@ -15,6 +15,7 @@ defmodule Macrocounter.Repo.Migrations.InitialSchema do
       add :grams_protein, :integer
       add :grams_fat, :integer
       add :grams_carbs, :integer
+      add :grams_fiber, :integer
 
       timestamps()
     end
@@ -26,6 +27,7 @@ defmodule Macrocounter.Repo.Migrations.InitialSchema do
       add :grams_protein, :integer
       add :grams_fat, :integer
       add :grams_carbs, :integer
+      add :grams_fiber, :integer
       add :user_id, references(:users)
       add :food_id, references(:foods)
 
@@ -36,6 +38,7 @@ defmodule Macrocounter.Repo.Migrations.InitialSchema do
       add :grams_protein, :integer
       add :grams_fat, :integer
       add :grams_carbs, :integer
+      add :grams_fiber, :integer
       add :user_id, references(:users)
 
       timestamps()

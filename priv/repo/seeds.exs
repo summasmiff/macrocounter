@@ -21,7 +21,8 @@ Entry.changeset(%{
   quantity: 227,
   unit: "grams",
   grams_fat: 0,
-  grams_carbs: 9
+  grams_carbs: 9,
+  grams_fiber: 0
 })
 |> Repo.insert!
 
@@ -31,7 +32,8 @@ Food.changeset(%{
   quantity: 227,
   unit: "grams",
   grams_fat: 0,
-  grams_carbs: 9
+  grams_carbs: 9,
+  grams_fiber: 0
 })
 |> Repo.insert!
 
@@ -39,7 +41,8 @@ Goal.changeset(%{
   user_id: user.id,
   grams_protein: 110,
   grams_carbs: 107,
-  grams_fat: 53
+  grams_fat: 53,
+  grams_fiber: 25
 })
 |> Repo.insert!
 
