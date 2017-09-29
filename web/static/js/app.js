@@ -3,10 +3,32 @@ import 'core-js';
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { Router, IndexRoute, Route, Link, browserHistory, Redirect } from 'react-router';
-import EntryForm from './entryForm'
-import EntriesTable from './entriesTable'
+import update from 'immutability-helper';
+import EntryForm from './entryForm';
+import EntriesTable from './entriesTable';
+import Ajax from './ajax'
 
 export class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      loading: true,
+      entries: []
+    };
+
+    this.updateEntries = this.updateEntries.bind(this);
+  }
+
+  async componentDidMount() {
+    const entries = await Ajax.get('/api/entries');
+    this.setState({entries: entries.data});
+  }
+
+  async updateEntries(entry) {
+    const newEntry = await Ajax.post('/api/entries', {entry: entry});
+    this.setState({entries: update(this.state.entries, {$push: [entry]})});
+  }
+
   render() {
     return (
       <div>
@@ -29,7 +51,8 @@ export class App extends React.Component {
           </tbody>
         </table>
 
-        <EntryForm />
+        <EntryForm updateEntries={this.updateEntries} />
+        <EntriesTable entries={this.state.entries} />
 
         <h4>Add recent</h4>
         <ul>
@@ -37,7 +60,6 @@ export class App extends React.Component {
           <li><button>Greek yogurt 0%</button></li>
           <li><button>Cottage Cheese</button></li>
         </ul>
-        <EntriesTable />
       </div>
     );
   }

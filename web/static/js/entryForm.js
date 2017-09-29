@@ -14,18 +14,16 @@ export default class EntryForm extends React.Component {
     };
   }
 
-  submit(e) {
+  async submit(e) {
     e.preventDefault();
-    const params = {
-      'entry': {
-        'name': this.state.name,
-        'grams_protein': this.state.grams_protein,
-        'grams_fat': this.state.grams_fat,
-        'grams_carbs': this.state.grams_carbs,
-        'grams_fiber': this.state.grams_fiber
-      }
+    const entry = {
+      'name': this.state.name,
+      'grams_protein': this.state.grams_protein,
+      'grams_fat': this.state.grams_fat,
+      'grams_carbs': this.state.grams_carbs,
+      'grams_fiber': this.state.grams_fiber
     }
-    Ajax.post('/api/entries', params);
+    this.props.updateEntries(entry);
   }
 
   render() {
